@@ -14313,7 +14313,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Main = __webpack_require__(73);
 var NotFound = __webpack_require__(249);
 var About = __webpack_require__(250);
-var Films = __webpack_require__(266);
+var Films = __webpack_require__(251);
 
 document.addEventListener('DOMContentLoaded', function () {
   var Template = function (_React$Component) {
@@ -28710,10 +28710,244 @@ var About = function (_React$Component) {
 module.exports = About;
 
 /***/ }),
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _film_list = __webpack_require__(252);
+
+var _film_list2 = _interopRequireDefault(_film_list);
+
+var _film_detail = __webpack_require__(254);
+
+var _film_detail2 = _interopRequireDefault(_film_detail);
+
+var _youtubeApiSearch = __webpack_require__(255);
+
+var _youtubeApiSearch2 = _interopRequireDefault(_youtubeApiSearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var YOUTUBE_YOUTUBE_API_KEY = 'AIzaSyA_TQp0e7PA7Oo0Cmu7SoWRXdUmO0Fc6Ls';
+
+var Films = function (_React$Component) {
+  _inherits(Films, _React$Component);
+
+  function Films(props) {
+    _classCallCheck(this, Films);
+
+    var _this = _possibleConstructorReturn(this, (Films.__proto__ || Object.getPrototypeOf(Films)).call(this, props));
+
+    _this.state = {
+      films: [],
+      selectedFilm: null
+    };
+
+    (0, _youtubeApiSearch2.default)({
+      key: YOUTUBE_YOUTUBE_API_KEY,
+      term: 'tudor documentary' }, function (films) {
+      _this.setState({ films: films, selectedFilm: films[0] });
+    });
+
+    return _this;
+  }
+
+  _createClass(Films, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'section',
+        { id: 'vidsSection' },
+        _react2.default.createElement(_film_detail2.default, { film: this.state.selectedFilm }),
+        _react2.default.createElement(_film_list2.default, { onSelect: function onSelect(selectedFilm) {
+            return _this2.setState({ selectedFilm: selectedFilm });
+          }, films: this.state.films })
+      );
+    }
+  }]);
+
+  return Films;
+}(_react2.default.Component);
+
+module.exports = Films;
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _film_list_item = __webpack_require__(253);
+
+var _film_list_item2 = _interopRequireDefault(_film_list_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FilmList = function FilmList(props) {
+  var filmItems = props.films.map(function (film) {
+    return _react2.default.createElement(_film_list_item2.default, { onSelect: props.onSelect, key: film.etag, film: film });
+  });
+
+  return _react2.default.createElement(
+    'ul',
+    { className: 'col-md-4 list-group' },
+    filmItems
+  );
+};
+
+exports.default = FilmList;
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FilmListItem = function FilmListItem(_ref) {
+  var film = _ref.film,
+      onSelect = _ref.onSelect;
+
+  var imageUrl = film.snippet.thumbnails.default.url;
+
+  return _react2.default.createElement(
+    'li',
+    { onClick: function onClick() {
+        return onSelect(film);
+      }, className: 'list-group-item' },
+    _react2.default.createElement(
+      'div',
+      { className: 'film-list media' },
+      _react2.default.createElement(
+        'div',
+        { className: 'media-left' },
+        _react2.default.createElement('img', { className: 'media-object', src: imageUrl })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'media-body' },
+        _react2.default.createElement(
+          'div',
+          { className: 'media-heading title' },
+          film.snippet.title
+        )
+      )
+    )
+  );
+};
+
+exports.default = FilmListItem;
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FilmDetail = function FilmDetail(_ref) {
+  var film = _ref.film;
+
+  if (film) {
+    var filmId = film.id.videoId;
+    var url = "https://www.youtube.com/embed/" + filmId;
+
+    return _react2.default.createElement(
+      "div",
+      { className: "film-detail col-md-8" },
+      _react2.default.createElement(
+        "div",
+        { className: "embed-responsive embed-responsive-16by9" },
+        _react2.default.createElement("iframe", { className: "embed-responsive-item", src: url })
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "details" },
+        _react2.default.createElement(
+          "div",
+          { className: "title" },
+          film.snippet.title
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "description" },
+          film.snippet.description
+        )
+      )
+    );
+  } else {
+    return _react2.default.createElement(
+      "div",
+      { id: "load" },
+      _react2.default.createElement("img", { src: "../dist/images/loader.svg" })
+    );
+  }
+};
+
+exports.default = FilmDetail;
+
+/***/ }),
 /* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29218,244 +29452,6 @@ module.exports = function spread(callback) {
   };
 };
 
-
-/***/ }),
-/* 266 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(12);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _film_list = __webpack_require__(267);
-
-var _film_list2 = _interopRequireDefault(_film_list);
-
-var _film_detail = __webpack_require__(269);
-
-var _film_detail2 = _interopRequireDefault(_film_detail);
-
-var _youtubeApiSearch = __webpack_require__(255);
-
-var _youtubeApiSearch2 = _interopRequireDefault(_youtubeApiSearch);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var YOUTUBE_YOUTUBE_API_KEY = 'AIzaSyA_TQp0e7PA7Oo0Cmu7SoWRXdUmO0Fc6Ls';
-
-var Films = function (_React$Component) {
-  _inherits(Films, _React$Component);
-
-  function Films(props) {
-    _classCallCheck(this, Films);
-
-    var _this = _possibleConstructorReturn(this, (Films.__proto__ || Object.getPrototypeOf(Films)).call(this, props));
-
-    _this.state = {
-      films: [],
-      selectedFilm: null
-    };
-
-    (0, _youtubeApiSearch2.default)({
-      key: YOUTUBE_YOUTUBE_API_KEY,
-      term: 'tudor documentary' }, function (films) {
-      _this.setState({ films: films, selectedFilm: films[0] });
-    });
-
-    return _this;
-  }
-
-  _createClass(Films, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'section',
-        { id: 'vidsSection' },
-        _react2.default.createElement(_film_detail2.default, { film: this.state.selectedFilm }),
-        _react2.default.createElement(_film_list2.default, { onSelect: function onSelect(selectedFilm) {
-            return _this2.setState({ selectedFilm: selectedFilm });
-          }, films: this.state.films })
-      );
-    }
-  }]);
-
-  return Films;
-}(_react2.default.Component);
-
-module.exports = Films;
-
-/***/ }),
-/* 267 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(12);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _film_list_item = __webpack_require__(268);
-
-var _film_list_item2 = _interopRequireDefault(_film_list_item);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FilmList = function FilmList(props) {
-  var filmItems = props.films.map(function (film) {
-    return _react2.default.createElement(_film_list_item2.default, { onSelect: props.onSelect, key: film.etag, film: film });
-  });
-
-  return _react2.default.createElement(
-    'ul',
-    { className: 'col-md-4 list-group' },
-    filmItems
-  );
-};
-
-exports.default = FilmList;
-
-/***/ }),
-/* 268 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(12);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FilmListItem = function FilmListItem(_ref) {
-  var film = _ref.film,
-      onSelect = _ref.onSelect;
-
-  var imageUrl = film.snippet.thumbnails.default.url;
-
-  return _react2.default.createElement(
-    'li',
-    { onClick: function onClick() {
-        return onSelect(film);
-      }, className: 'list-group-item' },
-    _react2.default.createElement(
-      'div',
-      { className: 'film-list media' },
-      _react2.default.createElement(
-        'div',
-        { className: 'media-left' },
-        _react2.default.createElement('img', { className: 'media-object', src: imageUrl })
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'media-body' },
-        _react2.default.createElement(
-          'div',
-          { className: 'media-heading title' },
-          film.snippet.title
-        )
-      )
-    )
-  );
-};
-
-exports.default = FilmListItem;
-
-/***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(12);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FilmDetail = function FilmDetail(_ref) {
-  var film = _ref.film;
-
-  if (film) {
-    var filmId = film.id.videoId;
-    var url = "https://www.youtube.com/embed/" + filmId;
-
-    return _react2.default.createElement(
-      "div",
-      { className: "film-detail col-md-8" },
-      _react2.default.createElement(
-        "div",
-        { className: "embed-responsive embed-responsive-16by9" },
-        _react2.default.createElement("iframe", { className: "embed-responsive-item", src: url })
-      ),
-      _react2.default.createElement(
-        "div",
-        { className: "details" },
-        _react2.default.createElement(
-          "div",
-          { className: "title" },
-          film.snippet.title
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "description" },
-          film.snippet.description
-        )
-      )
-    );
-  } else {
-    return _react2.default.createElement(
-      "div",
-      { id: "load" },
-      _react2.default.createElement("img", { src: "/home/weronika/Pulpit/tudorz/dist/images/loader.svg" })
-    );
-  }
-};
-
-exports.default = FilmDetail;
 
 /***/ })
 /******/ ]);
