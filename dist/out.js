@@ -28940,7 +28940,7 @@ var FilmDetail = function FilmDetail(_ref) {
     return _react2.default.createElement(
       "div",
       { id: "load" },
-      _react2.default.createElement("img", { src: "../dist/images/loader.svg" })
+      _react2.default.createElement("img", { src: "../images/loader.svg" })
     );
   }
 };

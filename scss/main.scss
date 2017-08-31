@@ -111,49 +111,49 @@
 
 
     .henry {
-      @include tree-portrait("../dist/images/henry_VIII.jpg");
+      @include tree-portrait("../images/henry_VIII.jpg");
     }
 
     .aragon {
-      @include tree-portrait("dist/images/catherine_of_aragon.jpg");
+      @include tree-portrait("../images/catherine_of_aragon.jpg");
     }
 
     .boleyn {
-      @include tree-portrait("dist/images/anne_boleyn.jpg");
+      @include tree-portrait("../images/anne_boleyn.jpg");
     }
 
     .seymour {
-      @include tree-portrait("dist/images/jane_seymour.jpg");
+      @include tree-portrait("../images/jane_seymour.jpg");
     }
 
     .cleves {
-      @include tree-portrait("dist/images/anne_of_cleves.jpg");
+      @include tree-portrait("../images/anne_of_cleves.jpg");
     }
 
     .howard {
-      @include tree-portrait("dist/images/catherine_howard.jpg");
+      @include tree-portrait("../images/catherine_howard.jpg");
     }
 
     .parr {
-      @include tree-portrait("dist/images/catherine_parr.jpg");
+      @include tree-portrait("../images/catherine_parr.jpg");
     }
 
 
 
 
     .mary {
-      @include tree-portrait("dist/images/mary.jpg");
+      @include tree-portrait("../images/mary.jpg");
       margin-top: 5px;
       }
 
     .elizabeth {
-      @include tree-portrait("dist/images/elizabeth.jpg");
+      @include tree-portrait("../images/elizabeth.jpg");
       margin-top: 5px;
 
     }
 
     .edward {
-      @include tree-portrait("dist/images/edward.jpg");
+      @include tree-portrait("../images/edward.jpg");
       margin-top: 5px;
 
     }

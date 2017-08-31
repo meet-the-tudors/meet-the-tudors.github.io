@@ -20,7 +20,7 @@ const FilmDetail = ({film}) => {
   } else {
     return (
       <div id="load">
-        <img src="../dist/images/loader.svg"/>
+        <img src="../images/loader.svg"/>
       </div>
     )
   }
