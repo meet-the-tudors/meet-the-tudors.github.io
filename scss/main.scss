@@ -185,9 +185,11 @@
     margin-bottom: 20px;
     @include extra-small {
       font-size: 1.2rem;
+      text-align: center;
     }
     @include small {
       font-size: 1.2rem;
+      text-align: center;
     }
   }
 }
