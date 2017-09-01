@@ -23,38 +23,38 @@ let edwardText = 'was King of England and Ireland from 28 January 1547 until his
 let infoTableParents = [
   {
     name: "henry",
-    bio: <BioContent name="Henry VIII" dateBirth="123" dateDeath="123" text={henryText}/>
+    bio: <BioContent name="Henry VIII" dateBirth="28.06.1491" dateDeath="28.01.1547" text={henryText}/>
   }, {
     name: "aragon",
-    bio: <BioContent name="Catherine of Aragon" dateBirth="123" dateDeath="123" text={aragonText}/>
+    bio: <BioContent name="Catherine of Aragon" dateBirth="16.12.1485" dateDeath="7.01.1536" text={aragonText}/>
   }, {
     name: "boleyn",
-    bio: <BioContent name="Anne Boleyn" dateBirth="123" dateDeath="123" text={boleynText}/>
+    bio: <BioContent name="Anne Boleyn" dateBirth="c. 07.1501" dateDeath="19.05.1536" text={boleynText}/>
   }, {
     name: "seymour",
-    bio: <BioContent name="Jane Seymour" dateBirth="123" dateDeath="123" text={seymourText}/>
+    bio: <BioContent name="Jane Seymour" dateBirth="c. 1508" dateDeath="24.10.1537" text={seymourText}/>
   }, {
     name: "cleves",
-    bio: <BioContent name="Anne of Cleves" dateBirth="123" dateDeath="123" text={clevesText}/>
+    bio: <BioContent name="Anne of Cleves" dateBirth="22.09.1515" dateDeath="16.07.1557" text={clevesText}/>
   }, {
     name: "howard",
-    bio: <BioContent name="Catherine Howard" dateBirth="123" dateDeath="123" text={howardText}/>
+    bio: <BioContent name="Catherine Howard" dateBirth="c. 1523" dateDeath="13.02.1542" text={howardText}/>
   }, {
     name: "parr",
-    bio: <BioContent name="Catherine Parr" dateBirth="123" dateDeath="123" text={parrText}/>
+    bio: <BioContent name="Catherine Parr" dateBirth="1512" dateDeath="5.09.1548" text={parrText}/>
   }
 ];
 
 let infoTableChildren = [
   {
     name: "mary",
-    bio: <BioContent name="Mary I" dateBirth="123" dateDeath="123" text={maryText}/>
+    bio: <BioContent name="Mary I" dateBirth="18.02.1516" dateDeath="17.11.1558" text={maryText}/>
   }, {
     name: "elizabeth",
-    bio: <BioContent name="Elizabeth I" dateBirth="123" dateDeath="123" text={elizabethText}/>
+    bio: <BioContent name="Elizabeth I" dateBirth="7.09.1533" dateDeath="24.03.1603" text={elizabethText}/>
   }, {
     name: "edward",
-    bio: <BioContent name="Edward VI" dateBirth="123" dateDeath="123" text={edwardText}/>
+    bio: <BioContent name="Edward VI" dateBirth="12.10.1537" dateDeath="6.07.1553" text={edwardText}/>
   }
 ];
 
