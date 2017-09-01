@@ -8492,36 +8492,36 @@ var edwardText = 'was King of England and Ireland from 28 January 1547 until his
 
 var infoTableParents = [{
   name: "henry",
-  bio: _react2.default.createElement(BioContent, { name: 'Henry VIII', dateBirth: '123', dateDeath: '123', text: henryText })
+  bio: _react2.default.createElement(BioContent, { name: 'Henry VIII', dateBirth: '28.06.1491', dateDeath: '28.01.1547', text: henryText })
 }, {
   name: "aragon",
-  bio: _react2.default.createElement(BioContent, { name: 'Catherine of Aragon', dateBirth: '123', dateDeath: '123', text: aragonText })
+  bio: _react2.default.createElement(BioContent, { name: 'Catherine of Aragon', dateBirth: '16.12.1485', dateDeath: '7.01.1536', text: aragonText })
 }, {
   name: "boleyn",
-  bio: _react2.default.createElement(BioContent, { name: 'Anne Boleyn', dateBirth: '123', dateDeath: '123', text: boleynText })
+  bio: _react2.default.createElement(BioContent, { name: 'Anne Boleyn', dateBirth: 'c. 07.1501', dateDeath: '19.05.1536', text: boleynText })
 }, {
   name: "seymour",
-  bio: _react2.default.createElement(BioContent, { name: 'Jane Seymour', dateBirth: '123', dateDeath: '123', text: seymourText })
+  bio: _react2.default.createElement(BioContent, { name: 'Jane Seymour', dateBirth: 'c. 1508', dateDeath: '24.10.1537', text: seymourText })
 }, {
   name: "cleves",
-  bio: _react2.default.createElement(BioContent, { name: 'Anne of Cleves', dateBirth: '123', dateDeath: '123', text: clevesText })
+  bio: _react2.default.createElement(BioContent, { name: 'Anne of Cleves', dateBirth: '22.09.1515', dateDeath: '16.07.1557', text: clevesText })
 }, {
   name: "howard",
-  bio: _react2.default.createElement(BioContent, { name: 'Catherine Howard', dateBirth: '123', dateDeath: '123', text: howardText })
+  bio: _react2.default.createElement(BioContent, { name: 'Catherine Howard', dateBirth: 'c. 1523', dateDeath: '13.02.1542', text: howardText })
 }, {
   name: "parr",
-  bio: _react2.default.createElement(BioContent, { name: 'Catherine Parr', dateBirth: '123', dateDeath: '123', text: parrText })
+  bio: _react2.default.createElement(BioContent, { name: 'Catherine Parr', dateBirth: '1512', dateDeath: '5.09.1548', text: parrText })
 }];
 
 var infoTableChildren = [{
   name: "mary",
-  bio: _react2.default.createElement(BioContent, { name: 'Mary I', dateBirth: '123', dateDeath: '123', text: maryText })
+  bio: _react2.default.createElement(BioContent, { name: 'Mary I', dateBirth: '18.02.1516', dateDeath: '17.11.1558', text: maryText })
 }, {
   name: "elizabeth",
-  bio: _react2.default.createElement(BioContent, { name: 'Elizabeth I', dateBirth: '123', dateDeath: '123', text: elizabethText })
+  bio: _react2.default.createElement(BioContent, { name: 'Elizabeth I', dateBirth: '7.09.1533', dateDeath: '24.03.1603', text: elizabethText })
 }, {
   name: "edward",
-  bio: _react2.default.createElement(BioContent, { name: 'Edward VI', dateBirth: '123', dateDeath: '123', text: edwardText })
+  bio: _react2.default.createElement(BioContent, { name: 'Edward VI', dateBirth: '12.10.1537', dateDeath: '6.07.1553', text: edwardText })
 }];
 
 var Main = function (_React$Component) {
@@ -28578,30 +28578,10 @@ var About = function (_React$Component) {
           _react2.default.createElement(
             'p',
             { className: 'aboutP' },
-            'Who am I?'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'aboutP' },
-            'You\'ve probably noticed I like the color red and I\'m interested in the history of the Tudors.'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'aboutP' },
-            'It\'s only a tiny fraction of my interests.'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'aboutP' },
-            'A pretty large fraction of them is web development.'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'aboutP' },
             'You can view the sourcecode by clicking ',
             _react2.default.createElement(
               'a',
-              { href: '#', target: '_blank' },
+              { href: 'https://github.com/weronika-sielicka/meet-the-tudors', target: '_blank' },
               _react2.default.createElement(
                 'span',
                 null,
@@ -28613,12 +28593,12 @@ var About = function (_React$Component) {
           _react2.default.createElement(
             'p',
             { className: 'aboutP' },
-            'Oh, how rude of me- I forgot to introduce myself! That\'s what babbling on about code gets you!'
+            'You\'ve probably noticed I like the color red and I\'m interested in the history of the Tudors.'
           ),
           _react2.default.createElement(
             'p',
             { className: 'aboutP' },
-            'I\'m Weronika.'
+            'I\'m also passionate about web development and improving my skills.'
           ),
           _react2.default.createElement(
             'p',
@@ -28638,7 +28618,7 @@ var About = function (_React$Component) {
           _react2.default.createElement(
             'p',
             { className: 'aboutP' },
-            'As this is my first project in React JS, it might not be as super awesome as it could be. If you have any tips or suggestions, let me know at meet-the-tudors@gmail.com.'
+            'As this is my first project in React JS, it might not be as super awesome as it could be. If you have any tips or suggestions, let me know at meet.the.tudos.io@gmail.com.'
           )
         ),
         _react2.default.createElement(
