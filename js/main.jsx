@@ -80,7 +80,7 @@ class Main extends React.Component {
               <p>Meet the most famous members
                 <br/>
                 of the Tudor Dynasty
-                <br/>who shaped history TEST</p>
+                <br/>who shaped history</p>
             </div>
           </section>
         </a>
